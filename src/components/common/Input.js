@@ -2,20 +2,18 @@ import React, { Component } from 'react';
 import { TextInput, View, Text } from 'react-native';
 
 class Input extends Component {
-    
-
     render() {
         const { inputStyle, labelStyle, containerStyle } = styles;
-        const { label, value, onChangeText } = this.props;
+        const { label, value, onChangeText, placeholder } = this.props;
 
         return (
             <View style={containerStyle}>
                 <Text style={labelStyle}>{label}</Text>
-                <TextInput style={inputStyle} value={value} onChangeText={onChangeText}></TextInput>
+                <TextInput placeholder={placeholder} autoCorrect={false} style={inputStyle} value={value} onChangeText={onChangeText}></TextInput>
             </View>
         );
     }
-};
+}
 
 const styles = {
     inputStyle: {
