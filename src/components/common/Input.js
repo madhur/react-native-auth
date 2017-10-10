@@ -4,12 +4,19 @@ import { TextInput, View, Text } from 'react-native';
 class Input extends Component {
     render() {
         const { inputStyle, labelStyle, containerStyle } = styles;
-        const { label, value, onChangeText, placeholder } = this.props;
+        const { label, value, onChangeText, placeholder, secureTextEntry } = this.props;
 
         return (
             <View style={containerStyle}>
                 <Text style={labelStyle}>{label}</Text>
-                <TextInput placeholder={placeholder} autoCorrect={false} style={inputStyle} value={value} onChangeText={onChangeText}></TextInput>
+                <TextInput
+                    secureTextEntry={secureTextEntry}
+                    placeholder={placeholder}
+                    autoCorrect={false}
+                    style={inputStyle}
+                    value={value}
+                    onChangeText={onChangeText}>
+                </TextInput>
             </View>
         );
     }
